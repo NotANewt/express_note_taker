@@ -8,6 +8,7 @@
 - Problem(s) the app solves: The user not having a place to organize their thoughts and keep track of tasks they need to complete.
 - Languages used: HTML, CSS, JavaScript
 - Brief description: A note-taking application where the user can write new notes, save notes, view existing notes, and delete notes.
+- Notes: This application's front end was provided. I built the back end, connected the two, and deployed the entire application to Heroku.
 
 ## Table of Contents
 
@@ -65,4 +66,4 @@ If you have any questions:
 ## Links
 
 - Here is the repo: [NotANewt/Express.js: Note Taker](https://www.github.com/NotANewt/hw11_express_note_taker)
-- Here is the pages: [NotANewt/pages](https://www.google.com)
+- Here is the link to the deployed app on Heroku: [Herokuapp/pages](https://express-note-taker-meegan.herokuapp.com/)
