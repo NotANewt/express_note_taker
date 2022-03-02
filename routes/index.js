@@ -1,8 +1,7 @@
 const app = require("express").Router();
-const db = require("../db/db.json");
 const { request } = require("express");
 const { v4: uuidv4 } = require("uuid");
-const { readAndAppend, readFromFile } = require("../helpers/fsUtils");
+const { readAndAppend, readFromFile, writeToFile } = require("../helpers/fsUtils");
 
 // API route: GET /api/notes reads the db.json file and return all saved notes as JSON.
 app.get("/notes", (req, res) => readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data))));
@@ -34,25 +33,17 @@ app.post("/notes", (req, res) => {
   }
 });
 
-/*
-/
-// TODO BONUS: create API route: add the DELETE route to the application
-// using the following guideline:
-//     DELETE /api/notes/:id should receive a query parameter that contains the id of a note to
-//     delete. To delete a note, you'll need to read all notes from the db.json file, remove the
-//     note with the given id property, and then rewrite the notes to the db.json file.
-*/
-// DELETE Route for a specific tip
-app.delete("/:note_id", (req, res) => {
+// DELETE Route for a note using note_id
+app.delete("/notes/:note_id", (req, res) => {
   const noteId = req.params.note_id;
   readFromFile("./db/db.json")
     .then((data) => JSON.parse(data))
     .then((json) => {
-      // Make a new array of all tips except the one with the ID provided in the URL
+      // Make a new array of all notes except the one with the ID provided in the URL
       const result = json.filter((note) => note.note_id !== noteId);
 
       // Save that array to the filesystem
-      writeToFile("./db/db/json", result);
+      writeToFile("./db/db.json", result);
 
       // Respond to the DELETE request
       res.json(`Item ${noteId} has been deleted 🗑️`);
