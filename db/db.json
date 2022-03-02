@@ -1,12 +1,12 @@
 [
     {
-        "title": "A note goes here",
-        "text": "Here is some stuff",
-        "note_id": "74abec9d-55ce-418f-b7b4-7df005baa6cc"
-    },
-    {
         "title": "Look another note",
         "text": "its right here",
         "note_id": "ddcf0e06-b9f2-40fc-b0c3-665c17881c70"
+    },
+    {
+        "title": "Remember",
+        "text": "Remember to do the thing.",
+        "note_id": "0362ec39-830a-4d05-aa0e-4f4340c2973e"
     }
 ]
